@@ -84,7 +84,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias c='clear'
-alias f='fg'
+alias f='fuck'
 alias p='python'
 alias p3='python3'
 alias ll='ls -al --color=auto'
