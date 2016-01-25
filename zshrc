@@ -7,7 +7,6 @@ export ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="robbyrussell"
-[[ -s /home/tourist/.autojump/etc/profile.d/autojump.sh ]] && source /home/tourist/.autojump/etc/profile.d/autojump.sh
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -89,8 +88,11 @@ alias p='python'
 alias p3='python3'
 alias ll='ls -al --color=auto'
 alias l='ls -al --color=auto'
+alias m='mongo'
+alias on='workon'
 alias v='vim'
 alias vi='vim'
+alias vim='nvim'
 alias va='vagrant'
 alias grep="grep --color=auto"
 alias -s gz='tar -xzvf'
@@ -101,3 +103,13 @@ export GOROOT=/usr/lib/go
 export GOPATH=$HOME/go
 
 RPROMPT="%{${fg[cyan]}%}[%~]%{${reset_color}%}"
+
+if brew list | grep coreutils > /dev/null ; then
+  PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+  alias ls='ls -F --show-control-chars --color=auto'
+  eval `gdircolors -b $HOME/.dir_colors`
+fi
+
+source /usr/local/bin/virtualenvwrapper.sh
+source /Users/longyun/z/z.sh
+eval $(thefuck --alias)
