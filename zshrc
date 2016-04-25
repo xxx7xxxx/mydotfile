@@ -84,17 +84,19 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias c='clear'
 alias f='fuck'
-alias p='python'
+alias p='python3'
 alias p3='python3'
 alias ll='ls -al --color=auto'
 alias l='ls -al --color=auto'
 alias m='mongo'
 alias on='workon'
+alias r='racket'
 alias v='vim'
 alias vi='vim'
 alias vim='nvim'
 alias va='vagrant'
 alias grep="grep --color=auto"
+alias gt='git status'
 alias -s gz='tar -xzvf'
 alias -s tgz='tar -xzvf'
 alias -s zip='unzip'
@@ -104,12 +106,15 @@ export GOPATH=$HOME/go
 
 RPROMPT="%{${fg[cyan]}%}[%~]%{${reset_color}%}"
 
-if brew list | grep coreutils > /dev/null ; then
-  PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-  alias ls='ls -F --show-control-chars --color=auto'
-  eval `gdircolors -b $HOME/.dir_colors`
+if [ $(uname -s) = "Darwin" ]; then
+        if brew list | grep coreutils > /dev/null ; then
+                PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+                alias ls='ls -F --show-control-chars --color=auto'
+                eval `gdircolors -b $HOME/.dir_colors`
+        fi
 fi
 
 source /usr/local/bin/virtualenvwrapper.sh
 source /Users/longyun/z/z.sh
 eval $(thefuck --alias)
+source /usr/local/opt/autoenv/activate.sh
