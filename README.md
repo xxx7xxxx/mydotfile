@@ -1,3 +1,3 @@
 My Dot File
 ==========
-need download k-vim, oh-my-zsh, autojump
+Dependencies: zsh, k-vim, oh-my-zsh, z, thefuck
