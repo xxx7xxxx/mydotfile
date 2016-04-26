@@ -114,7 +114,7 @@ if [ $(uname -s) = "Darwin" ]; then
         fi
 fi
 
-source /usr/local/bin/virtualenvwrapper.sh
+# source /usr/local/bin/virtualenvwrapper.sh
 source ~/z/z.sh
 eval $(thefuck --alias)
-source /usr/local/opt/autoenv/activate.sh
+# source /usr/local/opt/autoenv/activate.sh
