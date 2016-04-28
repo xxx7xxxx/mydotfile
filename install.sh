@@ -1,4 +1,6 @@
 #!/bin/bash
 
 ln -s ~/mydotfile/zshrc ~/.zshrc
-cp ~/mydotfile/robbyrussell.zsh-theme ~/.oh-my-zsh/themes/robbyrussell.zsh-theme
+ln -s ~/.config/nvim ~/.vim
+ln -s ~/.config/nvim/init.vim ~/.vimrc
+ln -s ~/.config/nvim/vimrc.bundles ~/.vimrc.bundles

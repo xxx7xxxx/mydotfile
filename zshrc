@@ -118,3 +118,4 @@ fi
 source ~/z/z.sh
 eval $(thefuck --alias)
 # source /usr/local/opt/autoenv/activate.sh
+export LC_ALL="en_US.UTF-8"
