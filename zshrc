@@ -53,7 +53,7 @@ plugins=(git autojump)
 
 # User configuration
 
-export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
+export PATH=/usr/local/openresty/nginx/sbin:/usr/local/openresty/luajit/bin:$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -86,10 +86,12 @@ alias c='clear'
 alias f='fuck'
 alias p='python3'
 alias p3='python3'
-alias ll='ls -al --color=auto'
 alias l='ls -al --color=auto'
+alias ll='ls -al --color=auto'
+alias lj='luajit'
 alias m='mongo'
-alias n='nginx'
+alias n='nginx -p /Users/longyun/code/openresty-test/'
+alias nr='nginx -p /Users/longyun/code/openresty-test/ -s reload'
 alias on='workon'
 alias r='racket'
 alias rc='redis-cli'
