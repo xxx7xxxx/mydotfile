@@ -90,8 +90,8 @@ alias l='ls -al --color=auto'
 alias ll='ls -al --color=auto'
 alias lj='luajit'
 alias m='mongo'
-alias n='nginx -p /Users/longyun/code/openresty-test/'
-alias nr='nginx -p /Users/longyun/code/openresty-test/ -s reload'
+alias n="nginx -p $HOME/code/openresty-test/"
+alias nr="nginx -p $HOME/code/openresty-test/ -s reload"
 alias on='workon'
 alias r='racket'
 alias rc='redis-cli'
