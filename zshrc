@@ -103,7 +103,7 @@ alias vim='nvim'
 alias va='vagrant'
 alias grep="grep --color=auto"
 alias gt='git status'
-alias un='uname -n'
+alias un='uname -a'
 alias -s gz='tar -xzvf'
 alias -s tgz='tar -xzvf'
 alias -s zip='unzip'
