@@ -53,7 +53,7 @@ plugins=(git autojump)
 
 # User configuration
 
-export PATH=/usr/local/openresty/nginx/sbin:/usr/local/openresty/luajit/bin:$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
+export PATH=/usr/local/go/bin:/usr/local/openresty/nginx/sbin:/usr/local/openresty/luajit/bin:$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -83,6 +83,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias c='clear'
+alias d='docker'
 alias f='fuck'
 alias p='python3'
 alias p3='python3'
@@ -102,12 +103,12 @@ alias vim='nvim'
 alias va='vagrant'
 alias grep="grep --color=auto"
 alias gt='git status'
+alias un='uname -n'
 alias -s gz='tar -xzvf'
 alias -s tgz='tar -xzvf'
 alias -s zip='unzip'
 alias -s bz2='tar -xjvf'
-export GOROOT=/usr/lib/go
-export GOPATH=$HOME/go
+export GOPATH=$HOME/code/workplace
 
 RPROMPT="%{${fg[cyan]}%}[%~]%{${reset_color}%}"
 
