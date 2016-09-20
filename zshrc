@@ -53,7 +53,7 @@ plugins=(git autojump)
 
 # User configuration
 
-export PATH=/usr/local/openresty/nginx/sbin:/usr/local/openresty/luajit/bin:$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
+export PATH=/usr/local/go/bin:/usr/local/openresty/nginx/sbin:/usr/local/openresty/luajit/bin:$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
