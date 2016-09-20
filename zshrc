@@ -83,6 +83,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias c='clear'
+alias d='docker'
 alias f='fuck'
 alias p='python3'
 alias p3='python3'
@@ -93,7 +94,7 @@ alias m='mongo'
 alias n="nginx -p $HOME/code/openresty-test/"
 alias nr="nginx -p $HOME/code/openresty-test/ -s reload"
 alias on='workon'
-alias r='racket'
+alias r='ruby'
 alias rc='redis-cli'
 alias rs='redis-server'
 alias v='vim'
@@ -102,13 +103,13 @@ alias vim='nvim'
 alias va='vagrant'
 alias grep="grep --color=auto"
 alias gt='git status'
-alias un='uname -n'
+alias un='uname -a'
 alias -s gz='tar -xzvf'
 alias -s tgz='tar -xzvf'
 alias -s zip='unzip'
 alias -s bz2='tar -xjvf'
-export GOROOT=/usr/lib/go
-export GOPATH=$HOME/go
+export GOPATH=$HOME/code/workplace
+export PATH=$GOPATH/bin:$PATH
 
 RPROMPT="%{${fg[cyan]}%}[%~]%{${reset_color}%}"
 
@@ -125,3 +126,5 @@ eval $(thefuck --alias)
 source `which virtualenvwrapper.sh`
 source `which activate.sh`
 export LC_ALL="en_US.UTF-8"
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
