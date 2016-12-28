@@ -49,14 +49,21 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump)
+plugins=(git z brew docker httpie python pip sudo)
 
 # User configuration
 
-export PATH=/usr/local/go/bin:/usr/local/openresty/nginx/sbin:/usr/local/openresty/luajit/bin:$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
+export PATH=/usr/local/openresty/nginx/sbin:/usr/local/openresty/luajit/bin:$PATH
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
+
+local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s)"
+PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%} % %{$reset_color%}'
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -85,12 +92,13 @@ source $ZSH/oh-my-zsh.sh
 alias c='clear'
 alias d='docker'
 alias f='fuck'
+alias h='history'
 alias p='python3'
 alias p3='python3'
 alias l='ls -al --color=auto'
 alias ll='ls -al --color=auto'
 alias lj='luajit'
-alias m='mongo'
+alias m='make run'
 alias n="nginx -p $HOME/code/openresty-test/"
 alias nr="nginx -p $HOME/code/openresty-test/ -s reload"
 alias on='workon'
@@ -129,4 +137,6 @@ export LANG="en_US.UTF-8"
 export LANGUAGE="en_US:en"
 export LC_ALL="en_US.UTF-8"
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+# export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export http_proxy=http://localhost:8123
+export https_proxy=http://localhost:8123
