@@ -16,7 +16,7 @@ RPROMPT="%{${fg[cyan]}%}[%~]%{${reset_color}%}"
 
 alias l='ls -al --color=auto'
 alias ll='ls -al --color=auto'
-alias gg='cd $GOPATH'
+alias gg='cd $GOPATH/src'
 alias m='make run'
 alias mm='make test'
 alias p='python3'
