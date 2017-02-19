@@ -2,6 +2,7 @@ export ZSH=$HOME/.oh-my-zsh
 export LANG="en_US.UTF-8"
 export LANGUAGE="en_US:en"
 export LC_ALL="en_US.UTF-8"
+export GOPATH=~/go
 export http_proxy=http://localhost:8123
 export https_proxy=http://localhost:8123
 
@@ -16,7 +17,7 @@ RPROMPT="%{${fg[cyan]}%}[%~]%{${reset_color}%}"
 
 alias l='ls -al --color=auto'
 alias ll='ls -al --color=auto'
-alias gg='cd $GOPATH/src'
+alias gg='cd ~/go/src'
 alias m='make run'
 alias mm='make test'
 alias p='python3'
@@ -37,7 +38,6 @@ fi
 
 if [ $(uname -s) = "Linux" ]; then
     export PATH=/usr/local/go/bin:$PATH
-    export GOPATH=~/go
     export http_proxy=
     export https_proxy=
 fi
