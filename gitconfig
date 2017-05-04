@@ -1,0 +1,14 @@
+[user]
+	name = Long Yun
+	email = longdeqidao@gmail.com
+[alias]
+	ll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	br = branch
+	co = checkout
+	st = status
+[core]
+	editor = nvim
+[pull]
+	rebase = true
+[http]
+	proxy = http://127.0.0.1:8123
