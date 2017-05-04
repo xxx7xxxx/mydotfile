@@ -16,6 +16,7 @@ local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s)"
 PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%} % %{$reset_color%}'
 RPROMPT="%{${fg[cyan]}%}[%~]%{${reset_color}%}"
 
+alias ag='ag --color-match 31\;'
 alias l='ls -al --color=auto'
 alias ll='ls -al --color=auto'
 alias gg='cd ~/go/src'
@@ -23,7 +24,6 @@ alias m='make run'
 alias mm='make test'
 alias p='python3'
 alias p3='python3'
-alias v='vim'
 alias vi='vim'
 alias vim='nvim'
 alias grep="grep --color=auto"
