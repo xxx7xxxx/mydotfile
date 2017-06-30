@@ -6,6 +6,7 @@ export GOPATH=~/go
 export PATH=$GOPATH/bin:$PATH
 export http_proxy=http://localhost:8123
 export https_proxy=http://localhost:8123
+export ZLE_REMOVE_SUFFIX_CHARS=""
 
 plugins=(git brew docker httpie python pip sudo go autoenv autojump)
 
@@ -32,6 +33,7 @@ alias un='uname -a'
 if [ $(uname -s) = "Darwin" ]; then
         if brew list | grep coreutils > /dev/null ; then
                 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+                export PATH="$(brew --prefix findutils)/libexec/gnubin:$PATH"
                 alias ls='ls -F --show-control-chars --color=auto'
                 eval `gdircolors -b $HOME/.dir_colors`
         fi
