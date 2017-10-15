@@ -4,8 +4,8 @@ export LANGUAGE="en_US:en"
 export LC_ALL="en_US.UTF-8"
 export GOPATH=~/go
 export PATH=$GOPATH/bin:$PATH
-export http_proxy=http://localhost:8123
-export https_proxy=http://localhost:8123
+export http_proxy=http://192.168.0.100:1087
+export https_proxy=http://192.168.0.100:1087
 export ZLE_REMOVE_SUFFIX_CHARS=""
 
 plugins=(git brew docker httpie python pip sudo go autoenv autojump)
@@ -41,6 +41,4 @@ fi
 
 if [ $(uname -s) = "Linux" ]; then
     export PATH=/usr/local/go/bin:$PATH
-    export http_proxy=
-    export https_proxy=
 fi
