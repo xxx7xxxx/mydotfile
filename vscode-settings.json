@@ -1,7 +1,6 @@
 {
   "http.proxy": "http://127.0.0.1:1087",
   "go.inferGopath": true,
-  "window.zoomLevel": 1,
   "terminal.external.osxExec": "iTerm.app",
   "editor.fontSize": 14,
   "editor.cursorStyle": "block",
@@ -18,6 +17,12 @@
   "search.smartCase": true,
   "explorer.confirmDelete": false,
   "scm.diffDecorationsGutterWidth": 2,
+  "window.restoreFullscreen": true,
+  "window.zoomLevel": 1,
+  "files.hotExit": "off",
+  // It's cooler to delete this line after the issue fixed.
+  // https://github.com/Microsoft/vscode/issues/54175
+  "zenMode.centerLayout": false,
 
   "editor.quickSuggestions": {
     "other": true,
@@ -142,6 +147,14 @@
     {
       "before": ["<leader>", "d"],
       "commands": ["editor.action.goToDeclaration"]
+    },
+    {
+      "before": ["<leader>", "r"],
+      "commands": ["code-runner.run"]
+    },
+    {
+      "before": ["<leader>", "z"],
+      "commands": ["workbench.action.toggleZenMode"]
     },
   ],
 }
