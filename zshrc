@@ -1,15 +1,11 @@
+STATIC_INTERNAL_IP=`ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '{print $2}'`
+HTTP_PROXY=http://${STATIC_INTERNAL_IP}:1087
+HTTP_PROXY=http://127.0.0.1:1087
+
+plugins=(git brew docker docker-compose docker-machine \
+         python pip sudo go autoenv autojump kubectl)
+
 export ZSH=$HOME/.oh-my-zsh
-export LANG="en_US.UTF-8"
-export LANGUAGE="en_US:en"
-export LC_ALL="en_US.UTF-8"
-export GOPATH=~/go
-export PATH=$GOPATH/bin:$PATH
-export http_proxy=http://127.0.0.1:1087
-export https_proxy=http://127.0.0.1:1087
-export ZLE_REMOVE_SUFFIX_CHARS=""
-
-plugins=(git brew docker httpie python pip sudo go autoenv autojump mvn)
-
 ZSH_THEME="robbyrussell"
 source $ZSH/oh-my-zsh.sh
 
@@ -17,14 +13,24 @@ local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ %s)"
 PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%} % %{$reset_color%}'
 RPROMPT="%{${fg[cyan]}%}[%~]%{${reset_color}%}"
 
-alias ag='ag --color-match 31\;'
-alias l='ls -al --color=auto'
-alias ll='ls -al --color=auto'
+export LANG="en_US.UTF-8"
+export LANGUAGE="en_US:en"
+export LC_ALL="en_US.UTF-8"
+export GOPATH=~/go
+export PATH=$GOPATH/bin:$PATH
+export http_proxy=${HTTP_PROXY}
+export https_proxy=${HTTP_PROXY}
+export HISTSIZE=10000000
+export SAVEHIST=10000000
+export ZLE_REMOVE_SUFFIX_CHARS=""
+
+
+alias cat='bat'
+alias find='fd'
+alias l='ls -alh --color=auto'
+alias ll='ls -alh --color=auto'
 alias gg='cd ~/go/src'
-alias m='make run'
-alias mm='make test'
-alias p='python3'
-alias p3='python3'
+alias gs='git status'
 alias vi='vim'
 alias vim='nvim'
 alias grep="grep --color=auto"
@@ -34,6 +40,7 @@ if [ $(uname -s) = "Darwin" ]; then
         if brew list | grep coreutils > /dev/null ; then
                 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
                 export PATH="$(brew --prefix findutils)/libexec/gnubin:$PATH"
+                export PATH=/usr/local/sbin:$PATH
                 alias ls='ls -F --show-control-chars --color=auto'
                 eval `gdircolors -b $HOME/.dir_colors`
         fi

@@ -1,0 +1,147 @@
+{
+  "http.proxy": "http://127.0.0.1:1087",
+  "go.inferGopath": true,
+  "window.zoomLevel": 1,
+  "terminal.external.osxExec": "iTerm.app",
+  "editor.fontSize": 14,
+  "editor.cursorStyle": "block",
+  "editor.cursorBlinking": "solid",
+  "editor.tabSize": 8,
+  "editor.lineNumbers": "relative",
+  "diffEditor.renderSideBySide": false,
+  "files.trimTrailingWhitespace": true,
+  "files.useExperimentalFileWatcher": true,
+  "workbench.colorTheme": "Tomorrow Night Bright",
+  "workbench.fontAliasing": "auto",
+  "workbench.statusBar.feedback.visible": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "search.smartCase": true,
+  "explorer.confirmDelete": false,
+  "scm.diffDecorationsGutterWidth": 2,
+
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+
+  "go.autocompleteUnimportedPackages": true,
+
+  "vim.enableNeovim": true,
+  "vim.cursorStylePerMode.insert": "line",
+  "vim.sneak": false,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": false,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+
+  "vim.easymotion": true,
+  "vim.easymotionMarkerBackgroundColor": "#000000",
+  "vim.easymotionMarkerForegroundColorOneChar": "#ea0e0e",
+  "vim.easymotionMarkerForegroundColorTwoChar": "#ea0e0e",
+  "vim.easymotionMarkerFontFamily": "Menlo, Monaco, 'Courier New', monospace",
+  "vim.easymotionMarkerYOffset": 4,
+  "vim.easymotionMarkerFontWeight": "bold",
+  "vim.easymotionMarkerHeight": 17,
+  "vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjf",
+
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+
+  "vim.leader": "<space>",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["H"],
+      "after": ["^"],
+    },
+    {
+      "before": ["L"],
+      "after": ["$"],
+    },
+    {
+      "before": ["U"],
+      "after": ["<C-r>"],
+    },
+    {
+      "before": ["m"],
+      "after": ["%"],
+    },
+    {
+      "before": ["<leader>", "h"],
+      "after": ["<leader>", "<leader>", "h"],
+    },
+    {
+      "before": ["<leader>", "l"],
+      "after": ["<leader>", "<leader>", "l"],
+    },
+    {
+      "before": ["<leader>", "j"],
+      "after": ["<leader>", "<leader>", "j"],
+    },
+    {
+      "before": ["<leader>", "<leader>", "j"],
+      "after": ["<leader>", "<leader>", "<leader>", "j"],
+    },
+    {
+      "before": ["<leader>", "k"],
+      "after": ["<leader>", "<leader>", "k"],
+    },
+    {
+      "before": ["<C-h>"],
+      "after": ["C-w", "h"],
+    },
+    {
+      "before": ["<C-l>"],
+      "after": ["C-w", "l"],
+    },
+    {
+      "before": ["<C-j>"],
+      "after": ["C-w", "j"],
+    },
+    {
+      "before": ["<C-k>"],
+      "after": ["C-w", "k"],
+    },
+
+    {
+      "before": ["<leader>", "w"],
+      "commands": [":w"],
+    },
+    {
+      "before": ["Z", "Z"],
+      "commands": [":wq"]
+    },
+    {
+      "before": ["<leader>", "q"],
+      "commands": [":q"],
+    },
+    {
+      "before": ["<leader>", "<leader>", "q"],
+      "commands": [":q!"],
+    },
+    {
+      "before": ["<leader>", "n"],
+      "commands": [":nohl"]
+    },
+    {
+        "before": ["<leader>", "f"],
+        "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", "<leader>", "f"],
+      "commands": ["editor.action.formatDocument"]
+    },
+    {
+        "before": ["<leader>", "c"],
+        "commands": ["workbench.action.showCommands"]
+    },
+    {
+      "before": ["<leader>", "d"],
+      "commands": ["editor.action.goToDeclaration"]
+    },
+  ],
+}
