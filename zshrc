@@ -2,6 +2,8 @@ STATIC_INTERNAL_IP=`ifconfig | grep "inet " | grep -Fv 127.0.0.1 | awk '{print $
 HTTP_PROXY=http://${STATIC_INTERNAL_IP}:1087
 HTTP_PROXY=http://127.0.0.1:1087
 
+export PATH=/Users/longyun/code/easestack/bin:${PATH}
+
 plugins=(git brew docker docker-compose docker-machine \
          python pip sudo go autoenv autojump kubectl)
 
@@ -27,8 +29,9 @@ export ZLE_REMOVE_SUFFIX_CHARS=""
 
 alias cat='bat'
 alias find='fd'
-alias l='ls -alh --color=auto'
-alias ll='ls -alh --color=auto'
+alias l='exa -al'
+alias ls='exa'
+alias ll='exa -al'
 alias gg='cd ~/go/src'
 alias gs='git status'
 alias vi='vim'
@@ -41,7 +44,6 @@ if [ $(uname -s) = "Darwin" ]; then
                 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
                 export PATH="$(brew --prefix findutils)/libexec/gnubin:$PATH"
                 export PATH=/usr/local/sbin:$PATH
-                alias ls='ls -F --show-control-chars --color=auto'
                 eval `gdircolors -b $HOME/.dir_colors`
         fi
 fi

@@ -1,6 +1,5 @@
 {
   "http.proxy": "http://127.0.0.1:1087",
-  "go.inferGopath": true,
   "terminal.external.osxExec": "iTerm.app",
   "editor.fontSize": 14,
   "editor.cursorStyle": "block",
@@ -30,6 +29,7 @@
     "strings": true
   },
 
+  "go.inferGopath": true,
   "go.autocompleteUnimportedPackages": true,
 
   "vim.enableNeovim": true,
@@ -50,16 +50,13 @@
   "vim.easymotionMarkerHeight": 17,
   "vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjf",
 
-  "vim.insertModeKeyBindings": [
-    {
-      "before": ["j", "j"],
-      "after": ["<Esc>"]
-    }
-  ],
+  "vim.insertModeKeyBindings": [{
+    "before": ["j", "j"],
+    "after": ["<Esc>"]
+  }],
 
   "vim.leader": "<space>",
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
+  "vim.normalModeKeyBindingsNonRecursive": [{
       "before": ["H"],
       "after": ["^"],
     },
@@ -111,6 +108,10 @@
       "before": ["<C-k>"],
       "after": ["C-w", "k"],
     },
+    {
+      "before": ["Y"],
+      "after": ["y", "$"],
+    },
 
     {
       "before": ["<leader>", "w"],
@@ -133,28 +134,77 @@
       "commands": [":nohl"]
     },
     {
-        "before": ["<leader>", "f"],
-        "commands": ["workbench.action.quickOpen"]
+      "before": ["<leader>", "f"],
+      "commands": ["workbench.action.quickOpen"]
     },
     {
       "before": ["<leader>", "<leader>", "f"],
       "commands": ["editor.action.formatDocument"]
     },
     {
-        "before": ["<leader>", "c"],
-        "commands": ["workbench.action.showCommands"]
+      "before": ["<leader>", "c"],
+      "commands": ["workbench.action.showCommands"]
     },
     {
       "before": ["<leader>", "d"],
       "commands": ["editor.action.goToDeclaration"]
     },
     {
+      "before": ["<leader>", "<leader>", "d"],
+      "commands": ["editor.action.openDeclarationToTheSide"]
+    },
+    {
+      "before": ["<leader>", "s"],
+      "commands": ["editor.action.showHover"]
+    },
+    {
+      "before": ["<leader>", "<leader>", "s"],
+      "commands": ["editor.action.previewDeclaration"]
+    },
+    {
       "before": ["<leader>", "r"],
       "commands": ["code-runner.run"]
+    },
+    {
+      "before": ["<leader>", "<leader>", "r"],
+      "commands": ["editor.action.referenceSearch.trigger"]
     },
     {
       "before": ["<leader>", "z"],
       "commands": ["workbench.action.toggleZenMode"]
     },
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.actions.view.problems"]
+    },
+    {
+      "before": ["<leader>", "g"],
+      "commands": ["workbench.action.gotoSymbol"],
+    },
+    {
+      "before": ["<leader>", "<leader>", "g"],
+      "commands": ["workbench.action.showAllSymbols"]
+    },
+    {
+      "before": ["<leader>", "x"],
+      "commands": ["editor.action.rename"],
+    },
+    {
+      "before": ["`", "`"],
+      "commands": ["workbench.action.navigateBack"],
+    },
+    {
+      "before": ["<leader>", "`"],
+      "commands": ["workbench.action.navigateForward"],
+    },
   ],
+  "vim.visualModeKeyBindings":[
+    {
+      "before": ["<leader>", "<leader>", "c"],
+      "commands": ["editor.action.commentLine"]
+    },
+  ],
+  "bracketPairColorizer.showVerticalScopeLine": false,
+  "bracketPairColorizer.showHorizontalScopeLine": false,
+  "currentFilePath.defaultPathStartsFrom": "workSpace",
 }
