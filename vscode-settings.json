@@ -6,10 +6,8 @@
   "editor.cursorBlinking": "solid",
   "editor.tabSize": 8,
   "editor.lineNumbers": "relative",
-  "editor.cursorSmoothCaretAnimation": true,
   "diffEditor.renderSideBySide": false,
   "files.trimTrailingWhitespace": true,
-  "files.useExperimentalFileWatcher": true,
   "workbench.colorTheme": "Tomorrow Night Bright",
   "workbench.fontAliasing": "auto",
   "workbench.statusBar.feedback.visible": false,
@@ -23,7 +21,7 @@
   "explorer.confirmDragAndDrop": false,
   "scm.diffDecorationsGutterWidth": 2,
   "window.restoreFullscreen": true,
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 2,
   "files.hotExit": "off",
   // It's cooler to delete this line after the issue fixed.
   // https://github.com/Microsoft/vscode/issues/54175
@@ -36,7 +34,6 @@
   },
 
   "go.inferGopath": true,
-  "go.autocompleteUnimportedPackages": true,
 
   "vim.enableNeovim": true,
   "vim.cursorStylePerMode.insert": "line",
@@ -210,4 +207,16 @@
       "commands": ["editor.action.commentLine"]
     },
   ],
+  "vim.neovimPath": "/usr/local/bin/nvim",
+  "zenMode.hideLineNumbers": false,
+  "editor.cursorSmoothCaretAnimation": true,
+  "go.autocompleteUnimportedPackages": true,
+  "terminal.explorerKind": "external",
+  "editor.hideCursorInOverviewRuler": true,
+  "terminal.integrated.scrollback": 1000000000,
+  "editor.parameterHints.cycle": true,
+  "editor.parameterHints.enabled": false,
+  "editor.find.seedSearchStringFromSelection": false,
+  "scrolloff.scrolloff": 7,
+  "diffEditor.ignoreTrimWhitespace": false,
 }
