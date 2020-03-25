@@ -6,6 +6,7 @@ if [ $OS = "osx" ]; then
         if brew list | grep coreutils > /dev/null ; then
                 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
                 export PATH="$(brew --prefix findutils)/libexec/gnubin:$PATH"
+		export PATH="$(brew --prefix make)/libexec/gnubin:$PATH"
                 export PATH=/usr/local/sbin:$PATH
                 eval `gdircolors -b $HOME/.dir_colors`
         fi
@@ -18,7 +19,7 @@ fi
 # <<<
 
 
-plugins=(vi-mode git brew docker go autoenv autojump kubectl history-substring-search)
+plugins=(vi-mode git docker go autoenv autojump kubectl)
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
@@ -29,22 +30,23 @@ PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%} % 
 RPROMPT="%{${fg[cyan]}%}[%~]%{${reset_color}%}"
 RPS1='$(vi_mode_prompt_info) '$RPS1
 
-setopt HIST_IGNORE_ALL_DUPS
-HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE='yes'
-
 export ETCDCTL_API=3
+export GO111MODULE=on
+export GOPROXY=https://goproxy.io
 export HISTSIZE=10000000
 export http_proxy=${HTTP_PROXY}
 export https_proxy=${HTTP_PROXY}
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export LANG="en_US.UTF-8"
 export LANGUAGE="en_US:en"
 export LC_ALL="en_US.UTF-8"
-export PATH=~/go/bin:$PATH
+export PATH=~/go/bin:~/.cargo/bin:$PATH
 export SAVEHIST=10000000
 export ZLE_REMOVE_SUFFIX_CHARS=""
 
 alias cat='bat -p'
 alias find='fd'
+alias g=gradle
 alias l='exa -al'
 alias ls='exa'
 alias ll='exa -al'
@@ -56,5 +58,7 @@ alias un='uname -a'
 
 setopt rm_star_silent
 
-bindkey -M vicmd 'H' beginning-of-line
-bindkey -M vicmd 'L' end-of-line
+bindkey '^[[A' history-beginning-search-backward
+bindkey '^[OA' history-beginning-search-backward
+bindkey '^[[B' history-beginning-search-forward
+bindkey '^[OB' history-beginning-search-forward

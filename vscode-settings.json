@@ -2,16 +2,14 @@
   "http.proxy": "http://127.0.0.1:1087",
   "terminal.external.osxExec": "iTerm.app",
   "editor.fontSize": 14,
-  "editor.cursorStyle": "block",
   "editor.cursorBlinking": "solid",
+  "editor.fontFamily": "FiraCode-Retina",
+  "editor.fontLigatures": true,
   "editor.tabSize": 8,
   "editor.lineNumbers": "relative",
   "diffEditor.renderSideBySide": false,
   "files.trimTrailingWhitespace": true,
-  "workbench.colorTheme": "Tomorrow Night Bright",
-  "workbench.fontAliasing": "auto",
   "workbench.statusBar.feedback.visible": false,
-  "workbench.iconTheme": "material-icon-theme",
   "workbench.editor.enablePreview": false,
   "bracketPairColorizer.showVerticalScopeLine": false,
   "bracketPairColorizer.showHorizontalScopeLine": false,
@@ -26,15 +24,27 @@
   // It's cooler to delete this line after the issue fixed.
   // https://github.com/Microsoft/vscode/issues/54175
   "zenMode.centerLayout": false,
-
   "editor.quickSuggestions": {
     "other": true,
     "comments": true,
     "strings": true
   },
-
   "go.inferGopath": true,
-
+  "go.useLanguageServer": true,
+  "[go]": {
+    "editor.snippetSuggestions": "none",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true,
+    }
+  },
+  "gopls": {
+    "usePlaceholders": false, // add parameter placeholders when completing a function
+    // Experimental settings
+    "completeUnimported": true, // autocomplete unimported packages
+    "deepCompletion": true, // enable deep completion
+  },
+  "files.eol": "\n", // formatting only supports LF line endings
   "vim.enableNeovim": true,
   "vim.cursorStylePerMode.insert": "line",
   "vim.sneak": false,
@@ -42,7 +52,6 @@
   "vim.useSystemClipboard": false,
   "vim.useCtrlKeys": true,
   "vim.hlsearch": true,
-
   "vim.easymotion": true,
   "vim.easymotionMarkerBackgroundColor": "#000000",
   "vim.easymotionMarkerForegroundColorOneChar": "#ea0e0e",
@@ -52,159 +61,348 @@
   "vim.easymotionMarkerFontWeight": "bold",
   "vim.easymotionMarkerHeight": 17,
   "vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjf",
-
-  "vim.insertModeKeyBindings": [{
-    "before": ["j", "j"],
-    "after": ["<Esc>"]
-  }],
-
   "vim.leader": "<space>",
-  "vim.normalModeKeyBindingsNonRecursive": [{
-      "before": ["H"],
-      "after": ["^"],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "H"
+      ],
+      "after": [
+        "^"
+      ],
     },
     {
-      "before": ["L"],
-      "after": ["$"],
+      "before": [
+        "L"
+      ],
+      "after": [
+        "$"
+      ],
     },
     {
-      "before": ["U"],
-      "after": ["<C-r>"],
+      "before": [
+        "U"
+      ],
+      "after": [
+        "<C-r>"
+      ],
     },
     {
-      "before": ["m"],
-      "after": ["%"],
+      "before": [
+        "m"
+      ],
+      "after": [
+        "%"
+      ],
     },
     {
-      "before": ["<leader>", "h"],
-      "after": ["<leader>", "<leader>", "h"],
+      "before": [
+        "<leader>",
+        "h"
+      ],
+      "after": [
+        "<leader>",
+        "<leader>",
+        "h"
+      ],
     },
     {
-      "before": ["<leader>", "l"],
-      "after": ["<leader>", "<leader>", "l"],
+      "before": [
+        "<leader>",
+        "l"
+      ],
+      "after": [
+        "<leader>",
+        "<leader>",
+        "l"
+      ],
     },
     {
-      "before": ["<leader>", "j"],
-      "after": ["<leader>", "<leader>", "j"],
+      "before": [
+        "<leader>",
+        "j"
+      ],
+      "after": [
+        "<leader>",
+        "<leader>",
+        "j"
+      ],
     },
     {
-      "before": ["<leader>", "<leader>", "j"],
-      "after": ["<leader>", "<leader>", "<leader>", "j"],
+      "before": [
+        "<leader>",
+        "<leader>",
+        "j"
+      ],
+      "after": [
+        "<leader>",
+        "<leader>",
+        "<leader>",
+        "j"
+      ],
     },
     {
-      "before": ["<leader>", "k"],
-      "after": ["<leader>", "<leader>", "k"],
+      "before": [
+        "<leader>",
+        "k"
+      ],
+      "after": [
+        "<leader>",
+        "<leader>",
+        "k"
+      ],
     },
     {
-      "before": ["<C-h>"],
-      "after": ["C-w", "h"],
+      "before": [
+        "<C-h>"
+      ],
+      "after": [
+        "C-w",
+        "h"
+      ],
     },
     {
-      "before": ["<C-l>"],
-      "after": ["C-w", "l"],
+      "before": [
+        "<C-l>"
+      ],
+      "after": [
+        "C-w",
+        "l"
+      ],
     },
     {
-      "before": ["<C-j>"],
-      "after": ["C-w", "j"],
+      "before": [
+        "<C-j>"
+      ],
+      "after": [
+        "C-w",
+        "j"
+      ],
     },
     {
-      "before": ["<C-k>"],
-      "after": ["C-w", "k"],
+      "before": [
+        "<C-k>"
+      ],
+      "after": [
+        "C-w",
+        "k"
+      ],
     },
     {
-      "before": ["Y"],
-      "after": ["y", "$"],
-    },
-
-    {
-      "before": ["<leader>", "w"],
-      "commands": [":w"],
-    },
-    {
-      "before": ["Z", "Z"],
-      "commands": [":wq"]
+      "before": [
+        "Y"
+      ],
+      "after": [
+        "y",
+        "$"
+      ],
     },
     {
-      "before": ["<leader>", "q"],
-      "commands": [":q"],
+      "before": [
+        "<leader>",
+        "w"
+      ],
+      "commands": [
+        ":w"
+      ],
     },
     {
-      "before": ["<leader>", "<leader>", "q"],
-      "commands": [":q!"],
+      "before": [
+        "Z",
+        "Z"
+      ],
+      "commands": [
+        ":wq"
+      ]
     },
     {
-      "before": ["<leader>", "n"],
-      "commands": [":nohl"]
+      "before": [
+        "<leader>",
+        "q"
+      ],
+      "commands": [
+        ":q"
+      ],
     },
     {
-      "before": ["<leader>", "f"],
-      "commands": ["workbench.action.quickOpen"]
+      "before": [
+        "<leader>",
+        "<leader>",
+        "q"
+      ],
+      "commands": [
+        ":q!"
+      ],
     },
     {
-      "before": ["<leader>", "<leader>", "f"],
-      "commands": ["editor.action.formatDocument"]
+      "before": [
+        "<leader>",
+        "n"
+      ],
+      "commands": [
+        ":nohl"
+      ]
     },
     {
-      "before": ["<leader>", "c"],
-      "commands": ["workbench.action.showCommands"]
+      "before": [
+        "<leader>",
+        "f"
+      ],
+      "commands": [
+        "workbench.action.quickOpen"
+      ]
     },
     {
-      "before": ["<leader>", "d"],
-      "commands": ["editor.action.goToDeclaration"]
+      "before": [
+        "<leader>",
+        "<leader>",
+        "f"
+      ],
+      "commands": [
+        "editor.action.formatDocument"
+      ]
     },
     {
-      "before": ["<leader>", "<leader>", "d"],
-      "commands": ["editor.action.openDeclarationToTheSide"]
+      "before": [
+        "<leader>",
+        "c"
+      ],
+      "commands": [
+        "workbench.action.showCommands"
+      ]
     },
     {
-      "before": ["<leader>", "s"],
-      "commands": ["editor.action.showHover"]
+      "before": [
+        "<leader>",
+        "d"
+      ],
+      "commands": [
+        "editor.action.goToDeclaration"
+      ]
     },
     {
-      "before": ["<leader>", "<leader>", "s"],
-      "commands": ["editor.action.previewDeclaration"]
+      "before": [
+        "<leader>",
+        "<leader>",
+        "d"
+      ],
+      "commands": [
+        "editor.action.openDeclarationToTheSide"
+      ]
     },
     {
-      "before": ["<leader>", "r"],
-      "commands": ["code-runner.run"]
+      "before": [
+        "<leader>",
+        "s"
+      ],
+      "commands": [
+        "editor.action.showHover"
+      ]
     },
     {
-      "before": ["<leader>", "<leader>", "r"],
-      "commands": ["editor.action.referenceSearch.trigger"]
+      "before": [
+        "<leader>",
+        "<leader>",
+        "s"
+      ],
+      "commands": [
+        "editor.action.previewDeclaration"
+      ]
     },
     {
-      "before": ["<leader>", "z"],
-      "commands": ["workbench.action.toggleZenMode"]
+      "before": [
+        "<leader>",
+        "r"
+      ],
+      "commands": [
+        "code-runner.run"
+      ]
     },
     {
-      "before": ["<leader>", "e"],
-      "commands": ["workbench.actions.view.problems"]
+      "before": [
+        "<leader>",
+        "<leader>",
+        "r"
+      ],
+      "commands": [
+        "editor.action.referenceSearch.trigger"
+      ]
     },
     {
-      "before": ["<leader>", "g"],
-      "commands": ["workbench.action.gotoSymbol"],
+      "before": [
+        "<leader>",
+        "z"
+      ],
+      "commands": [
+        "workbench.action.toggleZenMode"
+      ]
     },
     {
-      "before": ["<leader>", "<leader>", "g"],
-      "commands": ["workbench.action.showAllSymbols"]
+      "before": [
+        "<leader>",
+        "e"
+      ],
+      "commands": [
+        "workbench.actions.view.problems"
+      ]
     },
     {
-      "before": ["<leader>", "x"],
-      "commands": ["editor.action.rename"],
+      "before": [
+        "<leader>",
+        "g"
+      ],
+      "commands": [
+        "workbench.action.gotoSymbol"
+      ],
     },
     {
-      "before": ["`", "`"],
-      "commands": ["workbench.action.navigateBack"],
+      "before": [
+        "<leader>",
+        "<leader>",
+        "g"
+      ],
+      "commands": [
+        "workbench.action.showAllSymbols"
+      ]
     },
     {
-      "before": ["<leader>", "`"],
-      "commands": ["workbench.action.navigateForward"],
+      "before": [
+        "<leader>",
+        "x"
+      ],
+      "commands": [
+        "editor.action.rename"
+      ],
+    },
+    {
+      "before": [
+        "`",
+        "`"
+      ],
+      "commands": [
+        "workbench.action.navigateBack"
+      ],
+    },
+    {
+      "before": [
+        "<leader>",
+        "`"
+      ],
+      "commands": [
+        "workbench.action.navigateForward"
+      ],
     },
   ],
-  "vim.visualModeKeyBindings":[
+  "vim.visualModeKeyBindings": [
     {
-      "before": ["<leader>", "<leader>", "c"],
-      "commands": ["editor.action.commentLine"]
+      "before": [
+        "<leader>",
+        "<leader>",
+        "c"
+      ],
+      "commands": [
+        "editor.action.commentLine"
+      ]
     },
   ],
   "vim.neovimPath": "/usr/local/bin/nvim",
@@ -217,6 +415,35 @@
   "editor.parameterHints.cycle": true,
   "editor.parameterHints.enabled": false,
   "editor.find.seedSearchStringFromSelection": false,
-  "scrolloff.scrolloff": 7,
   "diffEditor.ignoreTrimWhitespace": false,
+  "files.exclude": {
+    "**/*.a": true,
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "powermode.enableShake": false,
+  "powermode.enableStatusBarComboCounter": false,
+  "powermode.enableStatusBarComboTimer": false,
+  "powermode.presets": "flames",
+  "debug.enableAllHovers": true,
+  "terminal.integrated.rendererType": "dom",
+  "vscode_vibrancy.theme": "Default Dark",
+  "vscode_vibrancy.opacity": -1,
+  "workbench.colorTheme": "Tomorrow Night Bright",
+  "workbench.fontAliasing": "auto",
+  "editor.minimap.enabled": false,
+  "editor.cursorSurroundingLines": 7,
+  "leetcode.hint.configWebviewMarkdown": false,
+  "leetcode.workspaceFolder": "/Users/longyun/code/algorithm004-01/Week 01/id_236",
+  "leetcode.defaultLanguage": "golang",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "editor.formatOnSave": true,
+  "workbench.startupEditor": "newUntitledFile",
+  "java.debug.settings.hotCodeReplace": "auto",
+  "boot-java.scan-java-test-sources.on": true,
+  "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -javaagent:\"/Users/longyun/.vscode/extensions/gabrielbb.vscode-lombok-1.0.1/server/lombok.jar\"",
 }
