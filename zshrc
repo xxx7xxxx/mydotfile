@@ -58,7 +58,17 @@ alias un='uname -a'
 
 setopt rm_star_silent
 
+bindkey -M vicmd 'H' beginning-of-line
+bindkey -M vicmd 'L' end-of-line
+
 bindkey '^[[A' history-beginning-search-backward
 bindkey '^[OA' history-beginning-search-backward
 bindkey '^[[B' history-beginning-search-forward
 bindkey '^[OB' history-beginning-search-forward
+
+# autoload -U up-line-or-beginning-search
+# autoload -U down-line-or-beginning-search
+# zle -N up-line-or-beginning-search
+# zle -N down-line-or-beginning-search
+# bindkey "^[[A" up-line-or-beginning-search # Up
+# bindkey "^[[B" down-line-or-beginning-search # Down
