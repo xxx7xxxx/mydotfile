@@ -36,7 +36,6 @@ export GOPROXY=https://goproxy.io
 export HISTSIZE=10000000
 export http_proxy=${HTTP_PROXY}
 export https_proxy=${HTTP_PROXY}
-export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export LANG="en_US.UTF-8"
 export LANGUAGE="en_US:en"
 export LC_ALL="en_US.UTF-8"

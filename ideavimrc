@@ -1,0 +1,65 @@
+" source ~/.vim/init.vim
+
+" Leader
+let mapleader=" "
+
+
+" Options
+set visualbell
+set noerrorbells
+set relativenumber
+set number
+set scroll
+set scrolloff=10
+set scrolljump=2
+set hlsearch
+set gdefault
+set showcmd
+set smartcase
+set viminfo
+
+set easymotion
+
+" File
+nnoremap <leader>q :q<cr>
+nnoremap <leader>w :w<cr>
+nnoremap <leader>p :set wrap!<cr>
+
+" Edit
+nnoremap U <C-r>
+
+" Movement
+noremap H ^
+noremap L $
+noremap Y y$
+nnoremap <C-e> 2<C-e>
+nnoremap <C-y> 2<C-y>
+
+" Window Movement
+noremap <C-j> <C-W>j
+noremap <C-k> <C-W>k
+noremap <C-h> <C-W>h
+noremap <C-l> <C-W>l
+
+" Search Stuff
+nnoremap / /\v
+nnoremap <leader>n :nohl<cr>
+
+" Easymotion
+nmap <leader>h <Plug>(easymotion-linebackward)
+nmap <leader>j <Plug>(easymotion-j)
+nmap <leader>k <Plug>(easymotion-k)
+nmap <leader>l <Plug>(easymotion-lineforward)
+nmap <Leader>f <Plug>(easymotion-bd-f)
+nmap <leader>g <Plug>(easymotion-bd-f2)
+
+" Actions
+map <leader>c :action GotoAction<cr>
+map <leader>d :action GotoDeclaration<cr>
+map <leader>s <M-s>
+map <leader>f :action GotoFile<cr>
+map <leader>a :action SearchEverywhere<cr>
+map <leader>g :action GotoSymbol<cr>
+map <leader>r :action Run<cr>
+map `` :action Back<cr>
+map <leader>` :action Forward<cr>
