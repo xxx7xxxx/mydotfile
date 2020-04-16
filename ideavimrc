@@ -19,6 +19,7 @@ set smartcase
 set viminfo
 
 set easymotion
+set commentary
 
 " File
 nnoremap <leader>q :q<cr>
@@ -53,13 +54,16 @@ nmap <leader>l <Plug>(easymotion-lineforward)
 nmap <Leader>f <Plug>(easymotion-bd-f)
 nmap <leader>g <Plug>(easymotion-bd-f2)
 
+" Commentary
+nmap <leader><leader>c gcc
+
 " Actions
-map <leader>c :action GotoAction<cr>
-map <leader>d :action GotoDeclaration<cr>
-map <leader>s <M-s>
-map <leader>f :action GotoFile<cr>
-map <leader>a :action SearchEverywhere<cr>
-map <leader>g :action GotoSymbol<cr>
-map <leader>r :action Run<cr>
-map `` :action Back<cr>
-map <leader>` :action Forward<cr>
+nmap <leader>c :action GotoAction<cr>
+nmap <leader>d :action GotoDeclaration<cr>
+nmap <leader>s <M-s>
+nmap <leader>f :action GotoFile<cr>
+nmap <leader>a :action SearchEverywhere<cr>
+nmap <leader>g :action GotoSymbol<cr>
+nmap <leader>r :action Run<cr>
+nmap `` :action Back<cr>
+nmap <leader>` :action Forward<cr>
