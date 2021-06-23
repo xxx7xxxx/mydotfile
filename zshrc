@@ -3,7 +3,7 @@ OS=osx # or linux
 
 if [ $OS = "osx" ]; then
 	HTTP_PROXY=http://127.0.0.1:1087
-        if brew list | grep coreutils > /dev/null ; then
+        if brew list --formula | grep coreutils > /dev/null ; then
                 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
                 export PATH="$(brew --prefix findutils)/libexec/gnubin:$PATH"
 		export PATH="$(brew --prefix make)/libexec/gnubin:$PATH"
@@ -19,7 +19,7 @@ fi
 # <<<
 
 
-plugins=(vi-mode git docker go autoenv autojump mvn)
+plugins=(vi-mode git docker golang autoenv autojump)
 
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
@@ -44,11 +44,11 @@ export SAVEHIST=10000000
 export ZLE_REMOVE_SUFFIX_CHARS=""
 
 alias cat='bat -p'
-alias find='fd'
-alias g=gradle
+alias k=kubectl
 alias l='exa -al'
 alias ls='exa'
 alias ll='exa -al'
+alias m=minikube
 alias gg='cd ~/go/src'
 alias vim='nvim'
 alias vv='cd ~/.vim'
@@ -71,3 +71,8 @@ bindkey '^[OB' history-beginning-search-forward
 # zle -N down-line-or-beginning-search
 # bindkey "^[[A" up-line-or-beginning-search # Up
 # bindkey "^[[B" down-line-or-beginning-search # Down
+
+source <(goreleaser completion zsh)
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm

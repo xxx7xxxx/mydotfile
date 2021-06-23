@@ -38,6 +38,9 @@
       "source.organizeImports": true,
     }
   },
+  "go.alternateTools": {
+    "go": "/usr/local/bin/go"
+  },
   "gopls": {
     "usePlaceholders": false, // add parameter placeholders when completing a function
     // Experimental settings
@@ -409,9 +412,8 @@
   "zenMode.hideLineNumbers": false,
   "editor.cursorSmoothCaretAnimation": true,
   "go.autocompleteUnimportedPackages": true,
-  "terminal.explorerKind": "external",
   "editor.hideCursorInOverviewRuler": true,
-  "terminal.integrated.scrollback": 1000000000,
+  "terminal.integrated.scrollback": 1000000,
   "editor.parameterHints.cycle": true,
   "editor.parameterHints.enabled": false,
   "editor.find.seedSearchStringFromSelection": false,
@@ -429,7 +431,6 @@
   "powermode.enableStatusBarComboTimer": false,
   "powermode.presets": "flames",
   "debug.enableAllHovers": true,
-  "terminal.integrated.rendererType": "dom",
   "vscode_vibrancy.theme": "Default Dark",
   "vscode_vibrancy.opacity": -1,
   "workbench.colorTheme": "Tomorrow Night Bright",
@@ -446,4 +447,6 @@
   "java.debug.settings.hotCodeReplace": "auto",
   "boot-java.scan-java-test-sources.on": true,
   "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -javaagent:\"/Users/longyun/.vscode/extensions/gabrielbb.vscode-lombok-1.0.1/server/lombok.jar\"",
+  "java.semanticHighlighting.enabled": true,
+  "terminal.explorerKind": "external",
 }
