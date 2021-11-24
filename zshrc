@@ -32,10 +32,11 @@ RPS1='$(vi_mode_prompt_info) '$RPS1
 
 export ETCDCTL_API=3
 export GO111MODULE=on
-export GOPROXY=https://goproxy.io
+export GOPROXY=https://goproxy.io,direct
 export HISTSIZE=10000000
 export http_proxy=${HTTP_PROXY}
 export https_proxy=${HTTP_PROXY}
+export JAVA_HOME=
 export LANG="en_US.UTF-8"
 export LANGUAGE="en_US:en"
 export LC_ALL="en_US.UTF-8"
@@ -48,12 +49,12 @@ alias k=kubectl
 alias l='exa -al'
 alias ls='exa'
 alias ll='exa -al'
-alias m=minikube
 alias gg='cd ~/go/src'
 alias vim='nvim'
 alias vv='cd ~/.vim'
 alias grep="grep --color=auto"
 alias un='uname -a'
+alias kcd='kubectl config set-context --current --namespace'
 
 setopt rm_star_silent
 
@@ -76,3 +77,5 @@ source <(goreleaser completion zsh)
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+export no_proxy=kubernetes.docker.internal,127.0.0.1,localhost

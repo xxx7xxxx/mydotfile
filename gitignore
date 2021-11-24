@@ -4,3 +4,8 @@
 *.iml
 
 .vscode/
+
+Makefile.dev
+Dockerfile.dev
+
+.env
