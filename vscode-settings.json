@@ -1,11 +1,9 @@
 {
-  "http.proxy": "http://127.0.0.1:1087",
   "terminal.external.osxExec": "iTerm.app",
   "editor.fontSize": 14,
   "editor.cursorBlinking": "solid",
   "editor.fontFamily": "FiraCode-Retina",
   "editor.fontLigatures": true,
-  "editor.tabSize": 8,
   "editor.lineNumbers": "relative",
   "diffEditor.renderSideBySide": false,
   "files.trimTrailingWhitespace": true,
@@ -32,17 +30,30 @@
     "editor.snippetSuggestions": "none",
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
-      "source.organizeImports": true,
+      "source.organizeImports": "explicit"
     }
   },
   "go.alternateTools": {
     "go": "/usr/local/bin/go"
   },
+  "go.lintTool": "revive",
   "gopls": {
+    "linkTarget": "",
     "usePlaceholders": false, // add parameter placeholders when completing a function
     // Experimental settings
+    "formatting.gofumpt": true,
     "completeUnimported": true, // autocomplete unimported packages
     "deepCompletion": true, // enable deep completion
+  },
+  "go.toolsEnvVars": {
+    // "GOPROXY": "https://goproxy.cn,direct",
+  },
+  "terminal.integrated.env.linux": {
+    // "GOPROXY": "https://goproxy.cn,direct",
+  },
+  "[racket]": {
+    "editor.rulers": [],
+    // some further Racket-specific configuration
   },
   "files.eol": "\n", // formatting only supports LF line endings
   "vim.enableNeovim": true,
@@ -52,14 +63,11 @@
   "vim.useSystemClipboard": false,
   "vim.useCtrlKeys": true,
   "vim.hlsearch": true,
-  "vim.easymotion": true,
   "vim.easymotionMarkerBackgroundColor": "#000000",
   "vim.easymotionMarkerForegroundColorOneChar": "#ea0e0e",
   // "vim.easymotionMarkerForegroundColorTwoChar": "#ea0e0e",
   // "vim.easymotionMarkerFontFamily": "Menlo, Monaco, 'Courier New', monospace",
-  "vim.easymotionMarkerYOffset": 4,
   "vim.easymotionMarkerFontWeight": "bold",
-  "vim.easymotionMarkerHeight": 17,
   "vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjf",
   "vim.leader": "<space>",
   "vim.normalModeKeyBindingsNonRecursive": [
@@ -283,8 +291,16 @@
     {
       "before": [
         "<leader>",
+        "v"
+      ],
+      "commands": [
+        "editor.action.revealDefinitionAside"
+      ]
+    },
+    {
+      "before": [
         "<leader>",
-        "d"
+        "b",
       ],
       "commands": [
         "editor.action.openDeclarationToTheSide"
@@ -312,17 +328,7 @@
     {
       "before": [
         "<leader>",
-        "r"
-      ],
-      "commands": [
-        "code-runner.run"
-      ]
-    },
-    {
-      "before": [
-        "<leader>",
-        "<leader>",
-        "r"
+        "r",
       ],
       "commands": [
         "editor.action.referenceSearch.trigger"
@@ -343,7 +349,7 @@
         "e"
       ],
       "commands": [
-        "workbench.actions.view.problems"
+        "code-runner.run",
       ]
     },
     {
@@ -405,15 +411,14 @@
       ]
     },
   ],
-  "vim.neovimPath": "/usr/local/bin/nvim",
+  "vim.neovimPath": "/opt/homebrew/bin/nvim",
   "zenMode.hideLineNumbers": false,
-  "editor.cursorSmoothCaretAnimation": true,
+  "editor.cursorSmoothCaretAnimation": "on",
   "go.autocompleteUnimportedPackages": true,
   "editor.hideCursorInOverviewRuler": true,
   "terminal.integrated.scrollback": 1000000,
   "editor.parameterHints.cycle": true,
   "editor.parameterHints.enabled": false,
-  "editor.find.seedSearchStringFromSelection": false,
   "diffEditor.ignoreTrimWhitespace": false,
   "files.exclude": {
     "**/*.a": true,
@@ -423,8 +428,6 @@
     "**/.factorypath": true
   },
   "workbench.iconTheme": "material-icon-theme",
-  "powermode.enableShake": false,
-  "powermode.enableStatusBarComboCounter": false,
   "powermode.enableStatusBarComboTimer": false,
   "powermode.presets": "flames",
   "workbench.colorTheme": "Tomorrow Night Bright",
@@ -437,6 +440,52 @@
   "workbench.startupEditor": "newUntitledFile",
   "java.debug.settings.hotCodeReplace": "auto",
   "boot-java.scan-java-test-sources.on": true,
-  "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -javaagent:\"/Users/longyun/.vscode/extensions/gabrielbb.vscode-lombok-1.0.1/server/lombok.jar\"",
   "terminal.explorerKind": "external",
+  "security.workspace.trust.untrustedFiles": "open",
+  "terminal.integrated.fontFamily": "Menlo",
+  "go.toolsManagement.autoUpdate": true,
+  "redhat.telemetry.enabled": true,
+  "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -javaagent:\"/Users/longyun/.vscode/extensions/gabrielbb.vscode-lombok-1.0.1/server/lombok.jar\"",
+  "powermode.combo.location": "statusbar",
+  "powermode.combo.counterEnabled": "hide",
+  "powermode.combo.timerEnabled": "hide",
+  "powermode.shake.enabled": false,
+  "output.smartScroll.enabled": false,
+  "code-runner.clearPreviousOutput": true,
+  "code-runner.saveAllFilesBeforeRun": true,
+  "code-runner.runInTerminal": true,
+  "go.testFlags": [
+    "-v"
+  ],
+  "editor.inlineSuggest.enabled": true,
+  "editor.find.seedSearchStringFromSelection": "never",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": true,
+    "markdown": true,
+    "scminput": false,
+    "yaml": true,
+    "racket": false
+  },
+  "files.restoreUndoStack": false,
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "go.addTags": {
+    "transform": "camelcase"
+  },
+  "go.languageServerFlags": [],
+  "http.proxy": "http://127.0.0.1:7890",
+  "http.proxyAuthorization": null,
+  "github.copilot.advanced": {},
+  "vs-kubernetes": {
+    "vscode-kubernetes.helm-path.mac": "/Users/longyun/.vs-kubernetes/tools/helm/darwin-arm64/helm",
+    "vscode-kubernetes.minikube-path.mac": "/Users/longyun/.vs-kubernetes/tools/minikube/darwin-arm64/minikube",
+    "vscode-kubernetes.helm-path-linux": "/home/ubuntu/.local/state/vs-kubernetes/tools/helm/linux-amd64/helm",
+    "vscode-kubernetes.kubectl-path-linux": "/home/ubuntu/.local/state/vs-kubernetes/tools/kubectl/kubectl",
+    "vscode-kubernetes.minikube-path-linux": "/home/ubuntu/.local/state/vs-kubernetes/tools/minikube/linux-amd64/minikube"
+  },
+  "gitlens.currentLine.enabled": false,
+  "settingsSync.ignoredSettings": [],
+  "editor.accessibilitySupport": "off",
 }

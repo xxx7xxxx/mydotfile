@@ -7,6 +7,7 @@
 	co = checkout
 	st = status
 	db = "!f() { git push -d x \"$1\" && git branch -D \"$1\"; }; f"
+	rs = restore
 [core]
 	editor = nvim
 	pager = diff-so-fancy | less --tabs=4 -RFX
@@ -15,7 +16,8 @@
 	rebase = true
 [http]
 	proxy = http://127.0.0.1:7890
-	postBuffer = 524288000
+[https]
+	proxy = http://127.0.0.1:7890
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
@@ -37,5 +39,3 @@
 	whitespace = red reverse
 [diff-so-fancy]
 	markEmptyLines = false
-[https]
-	proxy = http://127.0.0.1:7890

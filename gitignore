@@ -9,3 +9,5 @@ Makefile.dev
 Dockerfile.dev
 
 .env
+
+*.tar
